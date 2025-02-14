@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI 人格测试 - 首页</title>
+    <style>
+        body {
+            background-color: #4f3a3c;
+            margin: 0;
+            padding: 0;
+        }
+
+        #bg-image {
+            /* 使用 contain 确保图片完整显示并保持比例 */
+            background-image: url('./sucai/img_bg.png'); 
+            background-size: contain;
+            background-position: center top;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin-top: 0;
+        }
+
+        #start-btn {
+            position: absolute;
+            top: 72%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #FFF;
+            color: #4f3a3c
+            border: none;
+            padding: 15px 160px;
+            border-radius: 32px;
+            cursor: pointer;
+            font-size: 18px; 
+            white-space: nowrap; /* 防止文本换行 */
+            height: 56px; /* 显式设置按钮高度 */
+            overflow: hidden; /* 处理内容溢出 */
+            text-align: center; /* 使文本水平居中 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg-image">
+        <button id="start-btn">开始测试</button>
+    </div>
+    <script>
+        const startBtn = document.getElementById('start-btn');
+        startBtn.addEventListener('click', function () {
+            window.location.href = 'mbti-test.html';
+        });
+    </script>
+</body>
+
+</html>
