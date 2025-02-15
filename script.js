@@ -244,6 +244,15 @@ function renderCurrentQuestion() {
 
     questionContainer.appendChild(questionDiv);
     nextBtn.disabled = true;
+
+    // 更新进度条
+    updateProgressBar();
+}
+
+// 更新进度条
+function updateProgressBar() {
+    const progress = (currentQuestionIndex / questions.length) * 100;
+    document.getElementById('progress').style.width = `${progress}%`;
 }
 
 // 检查是否选择了答案
