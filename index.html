@@ -7,30 +7,27 @@
     <title>MBTI 人格测试 - 首页</title>
     <style>
         body {
-            background-color: #4f3a3c;
+            background-color: #674d46;
             margin: 0;
             padding: 0;
         }
 
         #bg-image {
-            /* 使用 contain 确保图片完整显示并保持比例 */
-            background-image: url('./sucai/img_bg.jpg'); 
+            background-image: url('./sucai/img_bg.jpg');
             background-size: contain;
             background-position: center top;
             background-repeat: no-repeat;
-            height: 100vh;
+            height: auto;
             margin-top: 0;
-             /* 确保没有额外的边框和内边距 */
             border: 0;
             padding: 0;
+            position: relative;
         }
 
         #start-btn {
             position: absolute;
-            top: 680px;
-            left: 48px;  /* 设置左边距为 48px */
-            right: 48px; /* 设置右边距为 20px */
-            transform: translateY(-50%); /* 只在垂直方向上居中 */
+            left: 48px;
+            right: 48px;
             background-color: #FFF;
             color: #4f3a3c;
             border: none;
@@ -38,10 +35,10 @@
             border-radius: 32px;
             cursor: pointer;
             font-size: 18px;
-            white-space: nowrap; /* 防止文本换行 */
-            height: 56px; /* 显式设置按钮高度 */
-            overflow: hidden; /* 处理内容溢出 */
-            text-align: center; /* 使文本水平居中 */
+            white-space: nowrap;
+            height: 56px;
+            overflow: hidden;
+            text-align: center;
         }
     </style>
 </head>
@@ -52,6 +49,24 @@
     </div>
     <script>
         const startBtn = document.getElementById('start-btn');
+        const bgImage = document.getElementById('bg-image');
+
+        function positionButton() {
+            const img = new Image();
+            img.src = './sucai/img_bg.jpg';
+            img.onload = function () {
+                const imgRatio = img.width / img.height;
+                const containerWidth = bgImage.offsetWidth;
+                const imgHeight = containerWidth / imgRatio;
+                startBtn.style.top = (imgHeight + 0) + 'px';
+                // 设置容器的高度
+                bgImage.style.height = imgHeight + 'px'; 
+            };
+        }
+
+        positionButton();
+        window.addEventListener('resize', positionButton);
+
         startBtn.addEventListener('click', function () {
             window.location.href = 'mbti-test.html';
         });
