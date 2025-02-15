@@ -20,15 +20,19 @@
             background-repeat: no-repeat;
             height: 100vh;
             margin-top: 0;
+             /* 确保没有额外的边框和内边距 */
+            border: 0;
+            padding: 0;
         }
 
         #start-btn {
             position: absolute;
-            top: 72%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: 842px;
+            left: 48px;  /* 设置左边距为 48px */
+            right: 48px; /* 设置右边距为 20px */
+            transform: translateY(-50%); /* 只在垂直方向上居中 */
             background-color: #FFF;
-            color: #4f3a3c
+            color: #4f3a3c;
             border: none;
             padding: 15px 160px;
             border-radius: 32px;
